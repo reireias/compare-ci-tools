@@ -1,4 +1,6 @@
-version: 2
+orbs:
+  slack: circleci/slack@3.3.0
+version: 2.1
 jobs:
   build:
     docker:
@@ -24,3 +26,5 @@ jobs:
       - run: yarn lint
 
       - run: yarn test
+
+      - slack/status
